@@ -65,6 +65,12 @@ class Stu extends StatelessWidget {
       "url": "http://ipv6.amiemall.com:8030"
     },
     {
+      "title": "goploy",
+      "author": "内容6",
+      "image": "../assets/images/goploy.png",
+      "url": "http://ipv6.amiemall.com:5800"
+    },
+    {
       "title": "DDNS-GO",
       "author": "内容7",
       "image": "../assets/images/DDNS-GO.png",

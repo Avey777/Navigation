@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart'; //跳转外部链接依赖库
+import '../adapt.dart' as a;
 
 class Homepage extends StatefulWidget {
   const Homepage({Key? key}) : super(key: key);
@@ -113,6 +114,12 @@ class Stu extends StatelessWidget {
       "url": "https://slack.com/"
     },
     {
+      "title": "Stepyun",
+      "author": "内容8",
+      "image": "../assets/images/stepyun.png",
+      "url": "http://stepyun.com/"
+    },
+    {
       "title": "TospinoNav",
       "author": "内容9",
       "image": "../assets/images/tospino.png",
@@ -135,68 +142,78 @@ class Stu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin:
-            EdgeInsetsDirectional.only(start: 500, top: 200, end: 500), //外边距
-        padding: EdgeInsetsDirectional.all(50), //内边距
-        child: GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 6, //设置列数
-            crossAxisSpacing: 32, //设置横向间距
-            mainAxisSpacing: 24, //设置主轴间距
-            childAspectRatio: 1 / 1.2, //宽高比
-          ),
-          scrollDirection: Axis.vertical,
-          itemCount: listData.length,
-          itemBuilder: (context, index) {
-            return GestureDetector(
-              onTap: () {
-                _launchURL(listData[index]["url"]);
-              },
-              child: ListView(
-                physics: const NeverScrollableScrollPhysics(), //禁止滚动，未起作用
-                children: [
-                  Container(
-                    margin: EdgeInsetsDirectional.only(bottom: 8), //外边距
-                    alignment: Alignment.centerLeft,
-                    height: 100,
-                    width: 50,
-                    decoration: BoxDecoration(
-                      image: new DecorationImage(
-                        image: new ExactAssetImage(listData[index]["image"]),
+      // margin: EdgeInsetsDirectional.only(start: 500, top: 200, end: 500), //外边距
+      // padding: EdgeInsetsDirectional.all(50), //内边距
+      margin: EdgeInsetsDirectional.only(
+          start: a.Adapt.px(200),
+          top: a.Adapt.px(20),
+          end: a.Adapt.px(200)), //外边距
+      padding: EdgeInsetsDirectional.all(a.Adapt.px(0)), //内边距
+      width: double.infinity,
+      height: double.infinity,
+      child: GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 6, //设置列数
+          crossAxisSpacing: a.Adapt.px(8), //设置横向间距
+          mainAxisSpacing: a.Adapt.px(2), //设置主轴间距
+          childAspectRatio: 1 / 1.3, //宽高比
+        ),
+        scrollDirection: Axis.vertical,
+        itemCount: listData.length,
+        itemBuilder: (context, index) {
+          return GestureDetector(
+            onTap: () {
+              _launchURL(listData[index]["url"]);
+            }, //onTap
+            child: ListView(
+              children: <Widget>[
+                Container(
+                  margin:
+                      EdgeInsetsDirectional.only(bottom: a.Adapt.px(4)), //外边距
+                  // alignment: Alignment.centerLeft,
+                  alignment: Alignment.center,
+                  width: double.infinity,
+                  // height: 100,
+                  height: a.Adapt.px(50),
+                  decoration: BoxDecoration(
+                    image: new DecorationImage(
+                      image: new ExactAssetImage(listData[index]["image"]),
 
-                        // fit: BoxFit.cover,
-                      ),
-                      border: Border.all(
-                        color: Color.fromARGB(255, 255, 255, 255),
-                        width: 2,
-                      ),
-                      borderRadius: BorderRadius.circular(24),
+                      // fit: BoxFit.cover,
+                    ),
+                    border: Border.all(
                       color: Color.fromARGB(255, 255, 255, 255),
-                      boxShadow: [
-                        BoxShadow(
-                            color: Color.fromARGB(255, 248, 141, 141),
-                            offset: Offset(0.0, 12.0), //阴影xy轴偏移量
-                            blurRadius: 8.0, //阴影模糊程度
-                            spreadRadius: 0.0), //阴影扩散程度
-                      ],
-                      // shape: BoxShape.rectangle,
+                      // width: 2,
                     ),
+
+                    borderRadius: BorderRadius.circular(24),
+                    color: Color.fromARGB(255, 255, 255, 255),
+                    boxShadow: [
+                      BoxShadow(
+                          color: Color.fromARGB(255, 248, 141, 141),
+                          offset: Offset(0.0, 12.0), //阴影xy轴偏移量
+                          blurRadius: 8.0, //阴影模糊程度
+                          spreadRadius: 0.0), //阴影扩散程度
+                    ],
+                    // shape: BoxShape.rectangle,
                   ),
-                  Text(
-                    listData[index]["title"],
-                    textAlign: TextAlign.center,
-                    overflow: TextOverflow.ellipsis,
-                    softWrap: true,
-                    maxLines: 2,
-                    style: new TextStyle(
-                      color: Color.fromARGB(255, 65, 61, 61),
-                    ),
+                ),
+                Text(
+                  listData[index]["title"],
+                  textAlign: TextAlign.center,
+                  overflow: TextOverflow.ellipsis,
+                  softWrap: true,
+                  maxLines: 2,
+                  style: new TextStyle(
+                    color: Color.fromARGB(255, 65, 61, 61),
                   ),
-                ],
-              ),
-            );
-          },
-        ));
+                ),
+              ],
+            ), //ListView
+          );
+        },
+      ),
+    );
   }
 
   //定义方法,运行需要 --no-sound-null-safety 参数，不然报错null安全

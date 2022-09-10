@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../nav.dart';
 
 //flutter run -d web-server --web-hostname 0.0.0.0 --web-port 80 --no-sound-null-safety
+//flutter build web --no-sound-null-safety
 void main() {
   runApp(const MyApp());
 }

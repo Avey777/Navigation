@@ -120,22 +120,28 @@ class Stu extends StatelessWidget {
       "url": "http://stepyun.com/"
     },
     {
-      "title": "TospinoNav",
-      "author": "内容9",
-      "image": "../assets/images/tospino.png",
-      "url": "http://tospino.amiemall.com"
-    },
-    {
       "title": "BoardMix&Pixso",
       "author": "内容9",
       "image": "../assets/images/boardmix.png",
       "url": "https://boardmix.cn/"
     },
     {
+      "title": "Drawio",
+      "author": "内容9",
+      "image": "../assets/images/drawio.png",
+      "url": "https://app.diagrams.net/"
+    },
+    {
       "title": "Mock",
       "author": "内容9",
       "image": "../assets/images/mock.png",
       "url": "https://user.mockplus.cn/choose-product"
+    },
+    {
+      "title": "TospinoNav",
+      "author": "内容9",
+      "image": "../assets/images/tospino.png",
+      "url": "http://tospino.amiemall.com"
     }
   ];
 

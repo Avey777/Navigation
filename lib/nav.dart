@@ -113,17 +113,18 @@ class Stu extends StatelessWidget {
       "image": "../assets/images/slack.png",
       "url": "https://slack.com/"
     },
-    {
-      "title": "Stepyun",
-      "author": "内容8",
-      "image": "../assets/images/stepyun.png",
-      "url": "http://stepyun.com/"
-    },
+
     {
       "title": "BoardMix&Pixso",
       "author": "内容9",
       "image": "../assets/images/boardmix.png",
       "url": "https://boardmix.cn/"
+    },
+    {
+      "title": "AFFINE",
+      "author": "内容8",
+      "image": "../assets/images/affine.png",
+      "url": "https://affine.pro/"
     },
     {
       "title": "Drawio",
@@ -136,6 +137,12 @@ class Stu extends StatelessWidget {
       "author": "内容9",
       "image": "../assets/images/mock.png",
       "url": "https://user.mockplus.cn/choose-product"
+    },
+    {
+      "title": "Stepyun",
+      "author": "内容8",
+      "image": "../assets/images/stepyun.png",
+      "url": "http://stepyun.com/"
     },
     {
       "title": "TospinoNav",

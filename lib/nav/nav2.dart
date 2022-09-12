@@ -155,6 +155,8 @@ class Stu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+    //设置网格列数
+    var crossAxisCount;
     //设置横向间距
     var crossAxisSpacing; //16
     //padding
@@ -164,16 +166,19 @@ class Stu extends StatelessWidget {
     var containerheight; //50
 
     if (size.width < 850) {
+      crossAxisCount = 4;
       crossAxisSpacing = 20; //设置横向间距 - 网格列之间的距离
-      paddingleft = 20;
-      paddingright = 20;
-      containerheight = 80;
+      paddingleft = 32;
+      paddingright = 32;
+      containerheight = 120;
     } else if (size.width >= 850 && size.width < 1100) {
+      crossAxisCount = 5;
       crossAxisSpacing = 20; //设置横向间距 - 网格列之间的距离
       paddingleft = 100;
       paddingright = 100;
       containerheight = 50;
     } else if (size.width >= 1100) {
+      crossAxisCount = 6;
       crossAxisSpacing = 20; //设置横向间距 - 网格列之间的距离
       paddingleft = 500;
       paddingright = 500;
@@ -182,7 +187,8 @@ class Stu extends StatelessWidget {
 
     return GridView.builder(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 6, //设置网格列数
+        // crossAxisCount: 6, //设置网格列数
+        crossAxisCount: crossAxisCount, //设置网格列数
 
         // crossAxisSpacing: 20, //------设置横向间距 - 网格列之间的距离 //850
         crossAxisSpacing: crossAxisSpacing, //------设置横向间距 - 网格列之间的距离 //850

@@ -108,17 +108,10 @@ class Stu extends StatelessWidget {
       "url": "https://console.apipost.cn/apis/project"
     },
     {
-      "title": "Slack",
+      "title": "Editor",
       "author": "内容8",
-      "image": "../assets/images/slack.png",
-      "url": "https://slack.com/"
-    },
-
-    {
-      "title": "BoardMix&Pixso",
-      "author": "内容9",
-      "image": "../assets/images/boardmix.png",
-      "url": "https://boardmix.cn/"
+      "image": "../assets/images/editormd.png",
+      "url": "http://editor.md.ipandao.com/"
     },
     {
       "title": "AFFINE",
@@ -137,6 +130,19 @@ class Stu extends StatelessWidget {
       "author": "内容9",
       "image": "../assets/images/mock.png",
       "url": "https://user.mockplus.cn/choose-product"
+    },
+    {
+      "title": "Slack",
+      "author": "内容8",
+      "image": "../assets/images/slack.png",
+      "url": "https://slack.com/"
+    },
+
+    {
+      "title": "BoardMix&Pixso",
+      "author": "内容9",
+      "image": "../assets/images/boardmix.png",
+      "url": "https://boardmix.cn/"
     },
     {
       "title": "Stepyun",

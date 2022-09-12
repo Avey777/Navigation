@@ -165,13 +165,13 @@ class Stu extends StatelessWidget {
     //设置Container高度
     var containerheight; //50
 
-    if (size.width < 900) {
+    if (size.width < 850) {
       crossAxisCount = 4;
       crossAxisSpacing = 20; //设置横向间距 - 网格列之间的距离
       paddingleft = 32;
       paddingright = 32;
       containerheight = 120;
-    } else if (size.width >= 900 && size.width < 1100) {
+    } else if (size.width >= 850 && size.width < 1100) {
       crossAxisCount = 5;
       crossAxisSpacing = 40; //设置横向间距 - 网格列之间的距离
       paddingleft = 100;

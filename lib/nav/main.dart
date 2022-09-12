@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../nav/nav2.dart';
-import '../constants.dart';
 
 // flutter run -d web-server --web-hostname 0.0.0.0 --web-port 80 --no-sound-null-safety
 // flutter build web --no-sound-null-safety
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       // title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false, //调试显示检查模式横幅
+      debugShowCheckedModeBanner: false,
       // theme: ThemeData(
       //   primarySwatch: Colors.blue,
       // ),

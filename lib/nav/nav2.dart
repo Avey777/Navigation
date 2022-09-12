@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart'; //跳转外部链接依赖库
-import '../adapt.dart' as a;
+import '../nav/adapt.dart' as a;
 
 class Homepage extends StatefulWidget {
   const Homepage({Key? key}) : super(key: key);
@@ -154,78 +154,109 @@ class Stu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      // margin: EdgeInsetsDirectional.only(start: 500, top: 200, end: 500), //外边距
-      // padding: EdgeInsetsDirectional.all(50), //内边距
-      margin: EdgeInsetsDirectional.only(
-          start: a.Adapt.px(200),
-          top: a.Adapt.px(20),
-          end: a.Adapt.px(200)), //外边距
-      padding: EdgeInsetsDirectional.all(a.Adapt.px(0)), //内边距
-      width: double.infinity,
-      height: double.infinity,
-      child: GridView.builder(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 6, //设置列数
-          crossAxisSpacing: a.Adapt.px(8), //设置横向间距
-          mainAxisSpacing: a.Adapt.px(2), //设置主轴间距
-          childAspectRatio: 1 / 1.3, //宽高比
-        ),
-        scrollDirection: Axis.vertical,
-        itemCount: listData.length,
-        itemBuilder: (context, index) {
-          return GestureDetector(
-            onTap: () {
-              _launchURL(listData[index]["url"]);
-            }, //onTap
-            child: ListView(
-              children: <Widget>[
-                Container(
-                  margin:
-                      EdgeInsetsDirectional.only(bottom: a.Adapt.px(4)), //外边距
-                  // alignment: Alignment.centerLeft,
-                  alignment: Alignment.center,
-                  width: double.infinity,
-                  // height: 100,
-                  height: a.Adapt.px(50),
-                  decoration: BoxDecoration(
-                    image: new DecorationImage(
-                      image: new ExactAssetImage(listData[index]["image"]),
+    var size = MediaQuery.of(context).size;
+    //设置横向间距
+    var crossAxisSpacing; //16
+    //padding
+    var paddingleft; //500
+    var paddingright; //500
+    //设置Container高度
+    var containerheight; //50
 
-                      // fit: BoxFit.cover,
-                    ),
-                    border: Border.all(
-                      color: Color.fromARGB(255, 255, 255, 255),
-                      // width: 2,
-                    ),
+    if (size.width < 850) {
+      crossAxisSpacing = 20; //设置横向间距 - 网格列之间的距离
+      paddingleft = 20;
+      paddingright = 20;
+      containerheight = 80;
+    } else if (size.width >= 850 && size.width < 1100) {
+      crossAxisSpacing = 20; //设置横向间距 - 网格列之间的距离
+      paddingleft = 100;
+      paddingright = 100;
+      containerheight = 50;
+    } else if (size.width >= 1100) {
+      crossAxisSpacing = 20; //设置横向间距 - 网格列之间的距离
+      paddingleft = 500;
+      paddingright = 500;
+      containerheight = 50;
+    }
 
-                    borderRadius: BorderRadius.circular(24),
-                    color: Color.fromARGB(255, 255, 255, 255),
-                    boxShadow: [
-                      BoxShadow(
-                          color: Color.fromARGB(255, 248, 141, 141),
-                          offset: Offset(0.0, 12.0), //阴影xy轴偏移量
-                          blurRadius: 8.0, //阴影模糊程度
-                          spreadRadius: 0.0), //阴影扩散程度
-                    ],
-                    // shape: BoxShape.rectangle,
-                  ),
-                ),
-                Text(
-                  listData[index]["title"],
-                  textAlign: TextAlign.center,
-                  overflow: TextOverflow.ellipsis,
-                  softWrap: true,
-                  maxLines: 2,
-                  style: new TextStyle(
-                    color: Color.fromARGB(255, 65, 61, 61),
-                  ),
-                ),
-              ],
-            ), //ListView
-          );
-        },
+    return GridView.builder(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 6, //设置网格列数
+
+        // crossAxisSpacing: 20, //------设置横向间距 - 网格列之间的距离 //850
+        crossAxisSpacing: crossAxisSpacing, //------设置横向间距 - 网格列之间的距离 //850
+
+        mainAxisSpacing: 2, //设置主轴间距 - 网格行之间的距离
+        childAspectRatio: 1 / 1.3, //宽高比
       ),
+
+      // padding: EdgeInsets.only(
+      //     left: 500, top: 50, right: 500, bottom: 0), //设置GridView内边距,很重要 - 1080
+      // padding: EdgeInsets.only(
+      //     left: 16, top: 20, right: 16, bottom: 0), //设置GridView内边距,很重要 - 850
+      padding: EdgeInsets.only(
+          left: paddingleft, //16
+          top: 20,
+          right: paddingright, //20
+          bottom: 0), //------设置GridView内边距,很重要
+
+      scrollDirection: Axis.vertical,
+      itemCount: listData.length,
+      itemBuilder: (context, index) {
+        return GestureDetector(
+          onTap: () {
+            _launchURL(listData[index]["url"]);
+          }, //onTap
+          child: ListView(
+            children: <Widget>[
+              Container(
+                margin: EdgeInsetsDirectional.only(bottom: a.Adapt.px(4)), //外边距
+
+                alignment: Alignment.center,
+                width: double.infinity,
+
+                // height: a.Adapt.px(50), //------1080
+                // height: a.Adapt.px(80), //------850
+                height: a.Adapt.px(containerheight), //------850
+
+                decoration: BoxDecoration(
+                  image: new DecorationImage(
+                    image: new ExactAssetImage(listData[index]["image"]),
+
+                    // fit: BoxFit.cover,
+                  ),
+                  border: Border.all(
+                    color: Color.fromARGB(255, 255, 255, 255),
+                    // width: 2,
+                  ),
+
+                  borderRadius: BorderRadius.circular(24),
+                  color: Color.fromARGB(255, 255, 255, 255),
+                  boxShadow: [
+                    BoxShadow(
+                        color: Color.fromARGB(255, 248, 141, 141),
+                        offset: Offset(0.0, 12.0), //阴影xy轴偏移量
+                        blurRadius: 8.0, //阴影模糊程度
+                        spreadRadius: 0.0), //阴影扩散程度
+                  ],
+                  // shape: BoxShape.rectangle,
+                ),
+              ),
+              Text(
+                listData[index]["title"],
+                textAlign: TextAlign.center,
+                overflow: TextOverflow.ellipsis,
+                softWrap: true,
+                maxLines: 1,
+                style: new TextStyle(
+                  color: Color.fromARGB(255, 65, 61, 61),
+                ),
+              ),
+            ],
+          ), //ListView
+        );
+      },
     );
   }
 

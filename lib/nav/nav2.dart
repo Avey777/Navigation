@@ -132,16 +132,16 @@ class Stu extends StatelessWidget {
       "url": "https://app.diagrams.net/"
     },
     {
+      "title": "penpot",
+      "author": "内容8",
+      "image": "../assets/images/penpot.png",
+      "url": "https://penpot.app/"
+    },
+    {
       "title": "Mock",
       "author": "内容9",
       "image": "../assets/images/mock.png",
       "url": "https://user.mockplus.cn/choose-product"
-    },
-    {
-      "title": "Slack",
-      "author": "内容8",
-      "image": "../assets/images/slack.png",
-      "url": "https://slack.com/"
     },
 
     {
@@ -149,6 +149,12 @@ class Stu extends StatelessWidget {
       "author": "内容9",
       "image": "../assets/images/boardmix.png",
       "url": "https://boardmix.cn/"
+    },
+    {
+      "title": "Slack",
+      "author": "内容8",
+      "image": "../assets/images/slack.png",
+      "url": "https://slack.com/"
     },
     {
       "title": "Stepyun",

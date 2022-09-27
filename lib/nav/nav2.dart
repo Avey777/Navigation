@@ -123,7 +123,7 @@ class Stu extends StatelessWidget {
       "title": "AFFINE",
       "author": "内容8",
       "image": "../assets/images/affine.png",
-      "url": "https://affine.pro/"
+      "url": "http://debian7.amiemall.com:4200/"
     },
     {
       "title": "Drawio",

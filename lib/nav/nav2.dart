@@ -90,10 +90,10 @@ class Stu extends StatelessWidget {
     //   "url": "http://10.243.0.7:8080"
     // },
     {
-      "title": "CloudBeaver",
+      "title": "Sqlstudio",
       "author": "内容9",
-      "image": "../assets/images/dbeaver.png",
-      "url": "http://ipv6.amiemall.com:8978"
+      "image": "../assets/images/sqlstudio.png",
+      "url": "http://ipv6.amiemall.com:18888"
     },
     {
       "title": "钛盘",

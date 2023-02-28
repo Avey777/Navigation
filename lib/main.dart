@@ -19,9 +19,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       // title: 'Flutter Demo',
       debugShowCheckedModeBanner: false, //调试显示检查模式横幅
-      // theme: ThemeData(
-      //   primarySwatch: Colors.blue,
-      // ),
+      theme: ThemeData(
+        // primarySwatch: Colors.blue,
+        useMaterial3: true,
+      ),
       home: Homepage(),
     );
   }

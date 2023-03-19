@@ -27,7 +27,7 @@ class Stu extends StatelessWidget {
       "title": "AFFINE",
       "author": "内容8",
       "image": "../assets/images/affine.png",
-      "url": "http://debian7.amiemall.com:4200/"
+      "url": "https://app.affine.pro/"
     },
     {
       "title": "FlowUs",

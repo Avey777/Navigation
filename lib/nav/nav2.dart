@@ -24,6 +24,12 @@ class _homeState extends State<Homepage> {
 class Stu extends StatelessWidget {
   List listData = [
     {
+      "title": "AFFINE",
+      "author": "内容8",
+      "image": "../assets/images/affine.png",
+      "url": "http://debian7.amiemall.com:4200/"
+    },
+    {
       "title": "FlowUs",
       "author": "内容1",
       "image": "../assets/images/flowus.png",
@@ -118,12 +124,6 @@ class Stu extends StatelessWidget {
       "author": "内容8",
       "image": "../assets/images/editormd.png",
       "url": "http://editor.md.ipandao.com/"
-    },
-    {
-      "title": "AFFINE",
-      "author": "内容8",
-      "image": "../assets/images/affine.png",
-      "url": "http://debian7.amiemall.com:4200/"
     },
     {
       "title": "Drawio",

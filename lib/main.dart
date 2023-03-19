@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import '../nav/nav2.dart';
 import '../constants.dart';
 
-// flutter run -d web-server --web-hostname 0.0.0.0 --web-port 80 --no-sound-null-safety
-// flutter build web --no-sound-null-safety
-// flutter build web --web-renderer html --no-sound-null-safety
-// flutter build web --web-renderer canvaskit --no-sound-null-safety
+// flutter run -d web-server --web-hostname 0.0.0.0 --web-port 80
+// flutter build web
+// flutter build web --web-renderer html
+// flutter build web --web-renderer canvaskit
 void main() {
   runApp(const MyApp());
 }
@@ -27,3 +27,9 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
+// flutter run -d web-server --web-hostname 0.0.0.0 --web-port 80 --no-sound-null-safety
+// flutter build web --no-sound-null-safety
+// flutter build web --web-renderer html --no-sound-null-safety
+// flutter build web --web-renderer canvaskit --no-sound-null-safety
